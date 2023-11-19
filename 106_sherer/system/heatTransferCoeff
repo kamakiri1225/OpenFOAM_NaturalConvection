@@ -1,0 +1,27 @@
+heatTransferCoeff1
+{
+    // Mandatory entries (unmodifiable)
+    type            heatTransferCoeff;
+    libs            (fieldFunctionObjects);
+    field           T;//<field>;
+    patches         (ball);//(<patch1> <patch2> ... <patchN>);
+    htcModel        fixedReferenceTemperature;//<htcModel>;
+    //UInf            (0 0 0);
+    //Cp              CpInf;
+    //CpInf           1000;
+    //rho             rhoInf;
+    //rhoInf          1.2;
+    TRef              293;
+
+    // Optional (inherited) entries
+    //result          <fieldResult>;
+    region          region0;
+    enabled         true;
+    log             true;
+    timeStart       0;
+    timeEnd         10000;
+    executeControl  timeStep;
+    executeInterval 500;
+    writeControl    timeStep;
+    writeInterval   500;
+}
